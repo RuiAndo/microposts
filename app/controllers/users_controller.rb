@@ -39,6 +39,11 @@ class UsersController < ApplicationController
     counts(@user)
   end
 
+  def favorites
+    @user = User.find(params[:id])
+    @likes = @user.liked_microposts.page(params[:page])
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)

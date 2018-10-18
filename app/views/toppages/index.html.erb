@@ -4,6 +4,7 @@
     <%= form_for(@micropost) do |f| %>
       <div class="form-group">
         <%= f.text_area :content, class: "form-control", rows: 5 %>
+        <%= hidden_field_tag :user, current_user.id %>
       </div>
       <%= f.submit 'Post', class: "btn btn-danger btn-block" %>
     <% end %>

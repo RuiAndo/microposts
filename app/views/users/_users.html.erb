@@ -7,7 +7,7 @@
       </div>
       <div class="media-body">
         <div>
-          <%= user.name %>
+          <%= link_to user.name, favorites_user_path(user) %>
         </div>
         <div>
           <p>
